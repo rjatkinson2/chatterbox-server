@@ -12,6 +12,10 @@ this file and include it in basic-server.js so that it actually works.
 
 **************************************************************/
 
+var fakeData = {results: [
+  {createdAt: "2015-03-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "new room", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"},
+  {createdAt: "2015-02-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "new room", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"}
+  ]};
 var requestHandler = function(request, response) {
   // Request and Response come from node's http module.
   //
@@ -39,7 +43,7 @@ var requestHandler = function(request, response) {
   //
   // You will need to change this if you are sending something
   // other than plain text, like JSON or HTML.
-  headers['Content-Type'] = "text/plain";
+  headers['Content-Type'] = "application/json";
 
   // .writeHead() writes to the request line and headers of the response,
   // which includes the status and all headers.
@@ -52,7 +56,7 @@ var requestHandler = function(request, response) {
   //
   // Calling .end "flushes" the response's internal buffer, forcing
   // node to actually send all the data over to the client.
-  response.end("Hello, World!");
+  response.end(JSON.stringify(fakeData));
 };
 
 // These headers will allow Cross-Origin Resource Sharing (CORS).
@@ -71,3 +75,7 @@ var defaultCorsHeaders = {
   "access-control-max-age": 10 // Seconds.
 };
 
+
+// createdAt: "2015-02-24T08:27:52.513Z"objectId: "vKSQLS08T2"roomname: "new room"text: "jabroni"updatedAt: "2015-02-24T08:27:52.513Z"username: "Dude"
+
+module.exports.requestHandler = requestHandler;

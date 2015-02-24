@@ -13,7 +13,7 @@ $(function() {
 
     init: function() {
       // Get username
-      app.username = window.location.search.substr(10);
+      app.username = "doug";
 
       // Cache jQuery selectors
       app.$main = $('#main');
@@ -44,6 +44,26 @@ $(function() {
         url: app.server,
         type: 'POST',
         data: JSON.stringify(data),
+        statusCode: {
+          204: function() {
+            alert( "page not found" );
+          },
+          404: function() {
+            alert( "page not found" );
+          },
+          205: function() {
+            alert( "page not found" );
+          },
+          206: function() {
+            alert( "page not found" );
+          },
+          207: function() {
+            alert( "page not found" );
+          },
+          208: function() {
+            alert( "page not found" );
+          }
+        },
         contentType: 'application/json',
         success: function (data) {
           console.log('chatterbox: Message sent');

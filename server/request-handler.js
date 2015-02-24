@@ -13,8 +13,8 @@ this file and include it in basic-server.js so that it actually works.
 **************************************************************/
 
 var fakeData = {results: [
-  {createdAt: "2015-03-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "new room", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"},
-  {createdAt: "2015-02-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "new room", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"}
+  {createdAt: "2015-03-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "lobby", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"},
+  {createdAt: "2015-02-24T08:27:52.513Z", objectId: "vKSQLS08T2", roomname: "lobby", text: "jabroni", updatedAt: "2015-02-24T08:27:52.513Z", username: "Dude"}
   ]};
 var requestHandler = function(request, response) {
   // Request and Response come from node's http module.
